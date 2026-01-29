@@ -5,6 +5,7 @@
 
 const letters = ["a", "b", "c"];
 // show b in the console 
+console.log(letters[1]);
 
 
 // --------------------------------------
@@ -13,6 +14,10 @@ const letters = ["a", "b", "c"];
 const friends = [];
 
 // What a lonely array. Add at least 3 friend objects to it.  
+for (let i = 0; i < 30; i++) {
+    friends.push({ name: `Friend ${i + 1}` });
+}
+console.log(friends);
 
 
 // --------------------------------------
@@ -22,7 +27,12 @@ const significantMathNumbers = [0, 2.718, 3.14159, 1729];
 
 // You want to programmatically find where the number 1729 is in the array.
 // programmatically means that no finger counting allowed. There is a method for this (finding index based of value). 
-
+let biggest = 0;
+significantMathNumbers.forEach(number => {
+    if (number > biggest) biggest = number;
+    
+});
+console.log(biggest);
 
 // --------------------------------------
 // Exercise 4 - Inserting elements
@@ -31,7 +41,9 @@ const diet = ["tomato", "cucumber", "rocket"];
 
 // You are a programmer. In one line (one statement) insert hamburger, soda and pizza between the elements cucumber and rocket
 
+diet.splice(2, 1, "hamburger", "soda", "pizza","rocket")
 
+console.log(diet);
 
 
 // --------------------------------------
@@ -40,7 +52,8 @@ const diet = ["tomato", "cucumber", "rocket"];
 // Remove the LAST element of the array.
 // Don't remove by index. You know in advance that it's the last in the array because you are too full already. 
 
-
+diet.pop();
+console.log(diet);
 
 
 
@@ -49,6 +62,8 @@ const diet = ["tomato", "cucumber", "rocket"];
 
 // You really like your daily diet from last exercise. Copy it to a new array called dinnerTray so you can give it to a friend.  
 
+const dinnerTray = [...diet];
+console.log(dinnerTray);
 
 
 // --------------------------------------
@@ -58,7 +73,9 @@ const lettersExpanded = ["a", "b", "c", "d", "e", "f", "g", "h"];
 
 // log every second char in the array starting from b
 
-
+for(let x = 1; x < lettersExpanded.length; x += 2){
+    console.log(lettersExpanded[x]);
+}
 
 // --------------------------------------
 // Exercise 8 - For loop and if statement
@@ -69,6 +86,17 @@ const discardedNumbers = [];
 
 // log the element if the number is above 6 or below 0
 // else push them to the array discardedNumbers
+
+numbers.forEach(n=> {
+    if (n>6 || n < 0){
+        console.log(n);
+    }else{
+        discardedNumbers.push(n)
+    }
+})
+console.log(" discarded " + discardedNumbers);
+
+
 
 // --------------------------------------
 
